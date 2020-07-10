@@ -1,3 +1,7 @@
 ## 0.0.1
 
-* Working.
+* First version of Countup.
+
+## 0.0.2
+
+* README.md Update.
