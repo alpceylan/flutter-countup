@@ -1,6 +1,23 @@
 import 'package:flutter/widgets.dart';
 
 class Countup extends StatefulWidget {
+  final double begin;
+  final double end;
+  final int precision;
+  final Curve curve;
+  final Duration duration;
+  final TextStyle style;
+  final TextAlign textAlign;
+  final TextDirection textDirection;
+  final Locale locale;
+  final bool softWrap;
+  final TextOverflow overflow;
+  final double textScaleFactor;
+  final int maxLines;
+  final String semanticsLabel;
+  final String separator;
+  final String prefix;
+
   Countup({
     Key key,
     @required this.begin,
@@ -18,23 +35,8 @@ class Countup extends StatefulWidget {
     this.maxLines,
     this.semanticsLabel,
     this.separator,
+    this.prefix = '',
   }) : super(key: key);
-
-  final double begin;
-  final double end;
-  final int precision;
-  final Curve curve;
-  final Duration duration;
-  final TextStyle style;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
-  final bool softWrap;
-  final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
-  final String separator;
 
   @override
   _CountupState createState() => _CountupState();
@@ -73,12 +75,27 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
       maxLines: widget.maxLines,
       semanticsLabel: widget.semanticsLabel,
       separator: widget.separator,
+      prefix: widget.prefix,
     );
   }
 }
 
 class _CountupAnimatedText extends AnimatedWidget {
-  RegExp reg = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+  final RegExp reg = new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))');
+
+  final Animation<double> animation;
+  final int precision;
+  final TextStyle style;
+  final TextAlign textAlign;
+  final TextDirection textDirection;
+  final Locale locale;
+  final bool softWrap;
+  final TextOverflow overflow;
+  final double textScaleFactor;
+  final int maxLines;
+  final String semanticsLabel;
+  final String separator;
+  final String prefix;
 
   _CountupAnimatedText({
     Key key,
@@ -94,31 +111,18 @@ class _CountupAnimatedText extends AnimatedWidget {
     this.maxLines,
     this.semanticsLabel,
     this.separator,
+    this.prefix,
   }) : super(key: key, listenable: animation);
-
-  final Animation<double> animation;
-  final int precision;
-
-  final TextStyle style;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
-  final bool softWrap;
-  final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
-  final String separator;
 
   @override
   Widget build(BuildContext context) => Text(
         separator != null
-            ? this
+            ? '$prefix' + this
                 .animation
                 .value
                 .toStringAsFixed(precision)
                 .replaceAllMapped(reg, (Match match) => '${match[1]}$separator')
-            : this.animation.value.toStringAsFixed(precision),
+            : '$prefix' + this.animation.value.toStringAsFixed(precision),
         style: this.style,
         textAlign: this.textAlign,
         textDirection: this.textDirection,

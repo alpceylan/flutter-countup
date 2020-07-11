@@ -4,4 +4,8 @@
 
 ## 0.0.2
 
-* README.md Update.
+* README.md Updated.
+
+## 0.0.3
+
+* Prefix prop added and README.md updated.

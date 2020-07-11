@@ -33,3 +33,37 @@ Countup(
 
 
 !['flutter-countup-basic'](https://media0.giphy.com/media/dvfNHGdpm984wCYfKh/giphy.gif)
+
+### Props
+
+#### `begin: double`
+
+#### `end: double`
+
+#### `separator: String`
+
+#### `duration: Duration`
+
+#### `style: TextStyle`
+
+#### `prefix: String`
+
+#### `precision: int`
+
+#### `curve: Curve`
+
+#### `textAlign: TextAlign`
+
+#### `textDirection: TextDirection`
+
+#### `locale: Locale`
+
+#### `softWrap: bool`
+
+#### `overflow: TextOverflow`
+
+#### `textScaleFactor: double`
+
+#### `maxLines: int`
+
+#### `semanticsLabel: String`
