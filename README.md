@@ -12,7 +12,7 @@ In your `pubspec.yaml` file within your Flutter Project:
 
 ```yaml
 dependencies:
-  countup: ^0.0.4
+  countup: ^0.0.5
 ```
 
 # Simple Usage
