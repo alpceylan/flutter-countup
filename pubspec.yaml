@@ -1,7 +1,7 @@
 name: countup
 description: An flutter plugin that will help you to build animated counter texts.
 homepage: https://github.com/alpceylan/flutter-countup
-version: 0.0.5
+version: 0.0.6
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

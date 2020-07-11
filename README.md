@@ -4,7 +4,7 @@
 
 # Flutter Countup
 
-Countup Widget for Flutter.
+A Flutter package that helps you create animated Text widgets for Android and IOS. Based by https://gitlab.com/kmcgill88/mccounting_text
 
 ## Installation
 
@@ -12,7 +12,7 @@ In your `pubspec.yaml` file within your Flutter Project:
 
 ```yaml
 dependencies:
-  countup: ^0.0.5
+  countup: ^0.0.6
 ```
 
 # Simple Usage
