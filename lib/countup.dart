@@ -117,11 +117,13 @@ class _CountupAnimatedText extends AnimatedWidget {
   @override
   Widget build(BuildContext context) => Text(
         separator != null
-            ? '$prefix' + this
-                .animation
-                .value
-                .toStringAsFixed(precision)
-                .replaceAllMapped(reg, (Match match) => '${match[1]}$separator')
+            ? '$prefix' +
+                this
+                    .animation
+                    .value
+                    .toStringAsFixed(precision)
+                    .replaceAllMapped(
+                        reg, (Match match) => '${match[1]}$separator')
             : '$prefix' + this.animation.value.toStringAsFixed(precision),
         style: this.style,
         textAlign: this.textAlign,

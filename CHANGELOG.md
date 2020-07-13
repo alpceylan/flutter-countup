@@ -17,3 +17,11 @@
 ## 0.0.5
 
 * Cleaning the code.
+
+## 0.0.6
+
+* MIT License requirements.
+
+## 0.1.0
+
+* Example added.
