@@ -51,10 +51,15 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
     _controller.dispose();
     super.dispose();
   }
+  
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(duration: widget.duration, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
-    _controller = AnimationController(duration: widget.duration, vsync: this);
     CurvedAnimation curvedAnimation =
         CurvedAnimation(parent: _controller, curve: widget.curve);
     _animation = Tween<double>(begin: widget.begin, end: widget.end)
