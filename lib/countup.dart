@@ -53,7 +53,7 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
     _controller.dispose();
     super.dispose();
   }
-  
+
   @override
   void initState() {
     super.initState();
@@ -68,11 +68,11 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
         CurvedAnimation(parent: _controller, curve: widget.curve);
     _animation = Tween<double>(begin: widget.begin, end: widget.end)
         .animate(curvedAnimation);
-    
+
     if (widget.begin != _latestBegin || widget.end != _latestEnd) {
       _controller.reset();
     }
-    
+
     _latestBegin = widget.begin;
     _latestEnd = widget.end;
     _controller.forward();

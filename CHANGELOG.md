@@ -29,3 +29,7 @@
 ## 0.1.1
 
 * Bug fixed with the help of @sommestad.
+
+## 0.1.2
+
+* fix(animation): ensure animation reset if values change

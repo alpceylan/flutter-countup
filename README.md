@@ -6,15 +6,6 @@
 
 A Flutter package that helps you create animated Text widgets for Android and IOS. Based by https://gitlab.com/kmcgill88/mccounting_text
 
-## Installation
-
-In your `pubspec.yaml` file within your Flutter Project:
-
-```yaml
-dependencies:
-  countup: ^0.1.0
-```
-
 # Simple Usage
 
 You should give a begin, end and a duration value to Countup widget. If you want you can also give separator and style value.
