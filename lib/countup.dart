@@ -45,6 +45,8 @@ class Countup extends StatefulWidget {
 class _CountupState extends State<Countup> with TickerProviderStateMixin {
   AnimationController _controller;
   Animation<double> _animation;
+  double _latestBegin;
+  double _latestEnd;
 
   @override
   void dispose() {
@@ -56,6 +58,8 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _controller = AnimationController(duration: widget.duration, vsync: this);
+    _latestBegin = widget.begin;
+    _latestEnd = widget.end;
   }
 
   @override
@@ -64,6 +68,13 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
         CurvedAnimation(parent: _controller, curve: widget.curve);
     _animation = Tween<double>(begin: widget.begin, end: widget.end)
         .animate(curvedAnimation);
+    
+    if (widget.begin != _latestBegin || widget.end != _latestEnd) {
+      _controller.reset();
+    }
+    
+    _latestBegin = widget.begin;
+    _latestEnd = widget.end;
     _controller.forward();
 
     return _CountupAnimatedText(
