@@ -64,6 +64,7 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
         CurvedAnimation(parent: _controller, curve: widget.curve);
     _animation = Tween<double>(begin: widget.begin, end: widget.end)
         .animate(curvedAnimation);
+    _controller.reset();
     _controller.forward();
 
     return _CountupAnimatedText(
