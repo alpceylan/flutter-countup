@@ -39,6 +39,8 @@ Countup(
 
 #### `prefix: String`
 
+#### `suffix: String`
+
 #### `precision: int`
 
 #### `curve: Curve`
