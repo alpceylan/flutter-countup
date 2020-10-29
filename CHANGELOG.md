@@ -33,3 +33,7 @@
 ## 0.1.2
 
 * fix(animation): ensure animation reset if values change
+
+## 0.1.3
+
+* add suffix props
