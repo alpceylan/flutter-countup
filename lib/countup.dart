@@ -17,7 +17,7 @@ class Countup extends StatefulWidget {
   final String semanticsLabel;
   final String separator;
   final String prefix;
-  final String sufix;
+  final String suffix;
 
   Countup({
     Key key,
@@ -37,7 +37,7 @@ class Countup extends StatefulWidget {
     this.semanticsLabel,
     this.separator,
     this.prefix = '',
-    this.sufix = '',
+    this.suffix = '',
   }) : super(key: key);
 
   @override
@@ -94,7 +94,7 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
       semanticsLabel: widget.semanticsLabel,
       separator: widget.separator,
       prefix: widget.prefix,
-      sufix: widget.sufix,
+      suffix: widget.suffix,
     );
   }
 }
@@ -115,7 +115,7 @@ class _CountupAnimatedText extends AnimatedWidget {
   final String semanticsLabel;
   final String separator;
   final String prefix;
-  final String sufix;
+  final String suffix;
 
   _CountupAnimatedText({
     Key key,
@@ -132,7 +132,7 @@ class _CountupAnimatedText extends AnimatedWidget {
     this.semanticsLabel,
     this.separator,
     this.prefix,
-    this.sufix,
+    this.suffix,
   }) : super(key: key, listenable: animation);
 
   @override
@@ -144,8 +144,8 @@ class _CountupAnimatedText extends AnimatedWidget {
                     .value
                     .toStringAsFixed(precision)
                     .replaceAllMapped(
-                        reg, (Match match) => '${match[1]}$separator') + '$sufix'
-            : '$prefix' + this.animation.value.toStringAsFixed(precision) + '$sufix',
+                        reg, (Match match) => '${match[1]}$separator') + '$suffix'
+            : '$prefix' + this.animation.value.toStringAsFixed(precision) + '$suffix',
         style: this.style,
         textAlign: this.textAlign,
         textDirection: this.textDirection,
