@@ -6,23 +6,23 @@ class Countup extends StatefulWidget {
   final int precision;
   final Curve curve;
   final Duration duration;
-  final TextStyle style;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
-  final bool softWrap;
-  final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
-  final String separator;
+  final TextStyle? style;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final String? separator;
   final String prefix;
   final String suffix;
 
   Countup({
-    Key key,
-    @required this.begin,
-    @required this.end,
+    Key? key,
+    required this.begin,
+    required this.end,
     this.precision = 0,
     this.curve = Curves.linear,
     this.duration = const Duration(milliseconds: 250),
@@ -45,10 +45,10 @@ class Countup extends StatefulWidget {
 }
 
 class _CountupState extends State<Countup> with TickerProviderStateMixin {
-  AnimationController _controller;
-  Animation<double> _animation;
-  double _latestBegin;
-  double _latestEnd;
+  late AnimationController _controller;
+  late Animation<double> _animation;
+  double? _latestBegin;
+  double? _latestEnd;
 
   @override
   void dispose() {
@@ -104,23 +104,23 @@ class _CountupAnimatedText extends AnimatedWidget {
 
   final Animation<double> animation;
   final int precision;
-  final TextStyle style;
-  final TextAlign textAlign;
-  final TextDirection textDirection;
-  final Locale locale;
-  final bool softWrap;
-  final TextOverflow overflow;
-  final double textScaleFactor;
-  final int maxLines;
-  final String semanticsLabel;
-  final String separator;
-  final String prefix;
-  final String suffix;
+  final TextStyle? style;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final String? separator;
+  final String? prefix;
+  final String? suffix;
 
   _CountupAnimatedText({
-    Key key,
-    @required this.animation,
-    @required this.precision,
+    Key? key,
+    required this.animation,
+    required this.precision,
     this.style,
     this.textAlign,
     this.textDirection,
