@@ -138,22 +138,20 @@ class _CountupAnimatedText extends AnimatedWidget {
   @override
   Widget build(BuildContext context) => Text(
         separator != null
-            ? '$prefix' +
-                this
-                    .animation
+            ? '$prefix' + animation
                     .value
                     .toStringAsFixed(precision)
                     .replaceAllMapped(
                         reg, (Match match) => '${match[1]}$separator') + '$suffix'
-            : '$prefix' + this.animation.value.toStringAsFixed(precision) + '$suffix',
-        style: this.style,
-        textAlign: this.textAlign,
-        textDirection: this.textDirection,
-        locale: this.locale,
-        softWrap: this.softWrap,
-        overflow: this.overflow,
-        textScaleFactor: this.textScaleFactor,
-        maxLines: this.maxLines,
-        semanticsLabel: this.semanticsLabel,
+            : '$prefix' + animation.value.toStringAsFixed(precision) + '$suffix',
+        style: style,
+        textAlign: textAlign,
+        textDirection: textDirection,
+        locale: locale,
+        softWrap: softWrap,
+        overflow: overflow,
+        textScaleFactor: textScaleFactor,
+        maxLines: maxLines,
+        semanticsLabel: semanticsLabel,
       );
 }
