@@ -37,3 +37,7 @@
 ## 0.1.3
 
 * add suffix props
+
+## 0.1.3
+
+* null safety
