@@ -49,6 +49,7 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
   late Animation<double> _animation;
   double? _latestBegin;
   double? _latestEnd;
+  Duration? _latestDuration;
 
   @override
   void dispose() {
@@ -62,6 +63,7 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
     _controller = AnimationController(duration: widget.duration, vsync: this);
     _latestBegin = widget.begin;
     _latestEnd = widget.end;
+    _latestDuration = widget.duration;
   }
 
   @override
@@ -71,12 +73,14 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
     _animation = Tween<double>(begin: widget.begin, end: widget.end)
         .animate(curvedAnimation);
 
-    if (widget.begin != _latestBegin || widget.end != _latestEnd) {
+    if (widget.begin != _latestBegin || widget.end != _latestEnd || widget.duration != _latestDuration) {
+      _controller.duration = widget.duration;
       _controller.reset();
     }
 
     _latestBegin = widget.begin;
     _latestEnd = widget.end;
+    _latestDuration = widget.duration;
     _controller.forward();
 
     return _CountupAnimatedText(
