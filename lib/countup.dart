@@ -59,6 +59,16 @@ class _CountupState extends State<Countup> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    _setAnimation();
+  }
+
+  @override
+  void didUpdateWidget(Countup oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _setAnimation();
+  }
+
+  void _setAnimation() {
     _controller = AnimationController(duration: widget.duration, vsync: this);
     _latestBegin = widget.begin;
     _latestEnd = widget.end;
